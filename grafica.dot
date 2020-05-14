@@ -1,0 +1,5 @@
+digraph G {
+rankdir=LR;
+roma->hola[label="a"];
+hola->xela[label="a"];
+}

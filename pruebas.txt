@@ -1,0 +1,8 @@
+xela|guate|1|46|12|25|10
+xela|roma|19|1|34|88|15
+guate|hola|2|6|22|91|3
+xela|hola|36|4|5|78|13
+hola|roma|3|9|2|73|22
+xela|paris|7|17|8|21|35
+hola|guate|15|20|16|63|40
+paris|guate|22|19|12|45|5
