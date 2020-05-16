@@ -26,7 +26,7 @@ public class CreacionSubGrafo {
     private final Grafo creacion = new Grafo();
     private final ArchivoEntrada archivo = new ArchivoEntrada();
 
-    public void crearGrafo(Nodo nodoTrabajar, JLabel imagen) {
+    public void crearGrafo(Nodo nodoTrabajar) {
         String texto = "";
         System.out.println(nodoTrabajar.getJerarquiaDestinos().size() + " xss ");
         for (int i = 0; i < nodoTrabajar.getJerarquiaDestinos().size(); i++) {
@@ -45,8 +45,6 @@ public class CreacionSubGrafo {
         crearArchivoGrafo(texto);
         creacionDOT("imagen2.jpg");
         System.out.println(texto);
-        JOptionPane.showMessageDialog(null, "mostrar");
-        imagen.setIcon(new ImageIcon("/home/luisitopapurey/Escritorio/Estructura de datos/ProyectoFinal/imagen2.jpg"));
     }
 
     public void creacionDOT(String imagen) {

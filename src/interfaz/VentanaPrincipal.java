@@ -11,6 +11,7 @@ import OperacionesDistancia.CalculoRutas;
 import OperacionesDistancia.ListaDestinos;
 import OperacionesDistancia.MejoresRutas;
 import entrada.ArchivoEntrada;
+import java.awt.Image;
 import java.io.*;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -53,18 +54,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         comboTransporte = new javax.swing.JComboBox<>();
+        lblImagenFondo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         archivoEntrada = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         comboOrigen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboOrigenActionPerformed(evt);
             }
         });
+        getContentPane().add(comboOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 390, 190, -1));
+
+        getContentPane().add(comboDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 390, 212, -1));
 
         btnRutas.setText("Buscar Rutas");
         btnRutas.addActionListener(new java.awt.event.ActionListener() {
@@ -72,6 +78,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btnRutasActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRutas, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 471, 172, -1));
 
         jButton1.setText("Insertar nuevo nodo");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +86,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 435, 108, -1));
 
         jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +94,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(593, 435, 156, -1));
 
         jButton3.setText("jButton3");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +102,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 471, -1, -1));
 
         jButton4.setText("jButton4");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +110,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 483, 142, -1));
 
         comboTransporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A pie", "Vehiculo" }));
         comboTransporte.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +118,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 comboTransporteActionPerformed(evt);
             }
         });
+        getContentPane().add(comboTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 436, 130, -1));
+        getContentPane().add(lblImagenFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 736, 366));
 
         jMenu1.setText("File");
 
@@ -124,63 +137,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(comboOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(comboDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(245, 245, 245)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(84, 84, 84)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(242, 242, 242)
-                        .addComponent(comboTransporte, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(217, 217, 217)
-                        .addComponent(btnRutas, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(88, 100, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jButton3)
-                        .addGap(143, 143, 143))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(comboOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)))
-                .addComponent(comboTransporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnRutas)
-                .addGap(23, 23, 23))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -206,6 +162,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 destinos.agregarDestinos(destinosPosibles, listDatos);
                 destinos.agregarAlListado(destinosPosibles, comboDestino);
                 destinos.agregarAlListado(destinosPosibles, comboOrigen);
+                ImageIcon imagen = new ImageIcon("/home/luisitopapurey/Escritorio/Estructura de datos/ProyectoFinal/imagen.jpg");
+                Icon icon = new ImageIcon(imagen.getImage().getScaledInstance(lblImagenFondo.getWidth(), lblImagenFondo.getHeight(), Image.SCALE_DEFAULT));
+                lblImagenFondo.setIcon(icon);
             } else {
                 JOptionPane.showMessageDialog(null, "No es un archivo compatible");
             }
@@ -292,5 +251,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel lblImagenFondo;
     // End of variables declaration//GEN-END:variables
 }

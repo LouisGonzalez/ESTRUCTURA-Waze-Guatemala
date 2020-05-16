@@ -5,8 +5,10 @@
  */
 package OperacionesDistancia;
 
+import ArbolB.Nodo;
 import ArbolB.Raiz;
 import java.util.ArrayList;
+import javax.swing.JLabel;
 import pollitos.EstadisticasRutas;
 
 /**
@@ -152,7 +154,7 @@ public class MejoresRutas {
                 }
             }
         }
-        System.out.println("La mejor ruta relacion Desgaste/Distancia es la no: "+idGanador);
+        System.out.println("La mejor ruta relacion Desgaste/Distancia es la no: " + idGanador);
         return idGanador;
     }
 
@@ -177,14 +179,55 @@ public class MejoresRutas {
             }
         } else {
             for (int i = 0; i < estadisticas.size(); i++) {
-                if(estadisticas.get(i).getId() == distancia){
+                if (estadisticas.get(i).getId() == distancia) {
                     idGanador = estadisticas.get(i).getId();
                     break;
                 }
             }
         }
-        System.out.println("La mejor ruta relacion Gas/Distancia es la no: "+idGanador);
+        System.out.println("La mejor ruta relacion Gas/Distancia es la no: " + idGanador);
         return idGanador;
+
+    }
+
+    public String escribirTrayectoria(String texto, Nodo nodo){
+        for (int i = 0; i < nodo.getJerarquiaDestinos().size(); i++) {
+            if(i == nodo.getJerarquiaDestinos().size() - 1){
+                texto += nodo.getJerarquiaDestinos().get(i);
+            } else {
+                texto += nodo.getJerarquiaDestinos().get(i) + " - ";
+            }
+        }
+        texto += "\n";
+        return texto;
+    }
+    
+    public String escribirCostos(Nodo nodo, ArrayList<Integer> lista, String tipo){
+        String texto = "";
+        Integer sumaTotal = 0;
+        for (int i = 0; i < lista.size(); i++) {
+            if(i == lista.size() - 1){
+                texto += lista.get(i);
+                sumaTotal = sumaTotal + lista.get(i);
+            } else {
+                texto += lista.get(i) + " - ";
+                sumaTotal = sumaTotal + lista.get(i);
+            }
+        }
+        if(tipo.equals("Distancia")){
+            texto += " \t\tDistancia total: "+sumaTotal+" km";
+        } else if(tipo.equals("Gas")){
+            texto += " \t\tGasolina total: "+sumaTotal+" galones";
+        } else if(tipo.equals("Desgaste")){
+            texto += " \t\tDesgaste fisico total: "+sumaTotal+" calorias.";
+        } else if(tipo.equals("TiempoPie")){
+            texto += " \t\tTiempo a pie total: "+sumaTotal+" minutos.";
+        } else if(tipo.equals("TiempoVehiculo")){
+            texto += " \t\tTiempo en vehiculo total: "+sumaTotal+" minutos.";
+        }
         
+        texto += "\n";
+        
+        return texto;
     }
 }

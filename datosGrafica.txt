@@ -1,2 +1,1 @@
-roma|hola|3|9|2|73|22
-hola|xela|36|4|5|78|13
+paris|xela|7|17|8|21|35
