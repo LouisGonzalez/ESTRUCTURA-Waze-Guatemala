@@ -9,14 +9,12 @@ import ArbolB.Nodo;
 import ArbolB.Raiz;
 import OperacionesDistancia.CalculoRutas;
 import OperacionesDistancia.ListaDestinos;
-import OperacionesDistancia.MejoresRutas;
 import entrada.ArchivoEntrada;
 import java.awt.Image;
 import java.io.*;
 import java.util.ArrayList;
 import javax.swing.*;
 import pollitos.DatosCamino;
-import pollitos.EstadisticasRutas;
 
 /**
  *
@@ -28,7 +26,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private final ListaDestinos destinos = new ListaDestinos();
     private ArrayList<DatosCamino> listDatos;
     private final ArrayList<String> destinosPosibles = new ArrayList<>();
-    private final MejoresRutas mejores = new MejoresRutas();
     private final CalculoRutas rutas = new CalculoRutas();
     private final Raiz arbolB = new Raiz();
     private int contId = 0;
@@ -78,7 +75,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btnRutasActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRutas, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 471, 172, -1));
+        getContentPane().add(btnRutas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 172, -1));
 
         jButton1.setText("Insertar nuevo nodo");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +116,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(comboTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 436, 130, -1));
-        getContentPane().add(lblImagenFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 736, 366));
+        getContentPane().add(lblImagenFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 736, 370));
 
         jMenu1.setText("File");
 
@@ -177,20 +174,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRutasActionPerformed
         String tipoMovimiento = "";
-        if (comboDestino.getSelectedItem().equals(comboOrigen.getSelectedItem())) {
-            JOptionPane.showMessageDialog(null, "No puedes dirigirte al mismo sitio");
-        } else {
-            if(comboTransporte.getSelectedItem().equals("A pie")){
-                rutas.rutasAPie(comboOrigen.getSelectedItem().toString(), comboDestino.getSelectedItem().toString(), listDatos, true, arbolB);
-                tipoMovimiento = "A Pie";
+        if (comboDestino.getItemCount() > 0) {
+            if (comboDestino.getSelectedItem().equals(comboOrigen.getSelectedItem())) {
+                JOptionPane.showMessageDialog(null, "No puedes dirigirte al mismo sitio");
             } else {
-                rutas.nuevaRuta(comboOrigen.getSelectedItem().toString(), comboDestino.getSelectedItem().toString(), listDatos, true, arbolB);
-                tipoMovimiento = "Vehiculo";
+                if (comboTransporte.getSelectedItem().equals("A pie")) {
+                    rutas.rutasAPie(comboOrigen.getSelectedItem().toString(), comboDestino.getSelectedItem().toString(), listDatos, true, arbolB);
+                    tipoMovimiento = "A Pie";
+                } else {
+                    rutas.nuevaRuta(comboOrigen.getSelectedItem().toString(), comboDestino.getSelectedItem().toString(), listDatos, true, arbolB);
+                    tipoMovimiento = "Vehiculo";
+                }
+
+                RutasPosibles posiblesRutas = new RutasPosibles(null, false, arbolB, tipoMovimiento, listDatos);
+
+                posiblesRutas.setVisible(true);
             }
         }
-         RutasPosibles posiblesRutas = new RutasPosibles(null, false, arbolB, tipoMovimiento, listDatos);
-      
-         posiblesRutas.setVisible(true);
+
     }//GEN-LAST:event_btnRutasActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -213,8 +214,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         System.out.println("\n");
-       arbolB.mostrarNodos(arbolB.raiz);
-       //arbolB.metodo2(arbolB.raiz, true);
+        arbolB.mostrarNodos(arbolB.raiz);
+        //arbolB.metodo2(arbolB.raiz, true);
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -222,11 +223,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         System.out.print("la raiz es :");
         for (int i = 0; i < arbolB.raiz.getMisRutas().length; i++) {
             if (arbolB.raiz.getMisRutas()[i] != null) {
-               
+
                 System.out.print(arbolB.raiz.getMisRutas()[i].getId() + " - " + i + " / ");
-                if(i == 0){
-                    if(arbolB.raiz.getMisRutas()[i].getHijoDerecho() != null){
-                        System.out.println(arbolB.raiz.getMisRutas()[i].getHijoDerecho().getMisRutas()[0].getId()+  "           que teimportag");
+                if (i == 0) {
+                    if (arbolB.raiz.getMisRutas()[i].getHijoDerecho() != null) {
+                        System.out.println(arbolB.raiz.getMisRutas()[i].getHijoDerecho().getMisRutas()[0].getId() + "           que teimportag");
                     }
                 }
             }
@@ -234,7 +235,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void comboTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTransporteActionPerformed
-        
+
     }//GEN-LAST:event_comboTransporteActionPerformed
 
 

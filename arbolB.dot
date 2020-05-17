@@ -1,0 +1,30 @@
+digraph G {
+node [shape = record,height=.1]node0[label = "<f0>| roma - 
+hola - 
+guate - 
+paris - 
+xela - 
+ |<f1>|  |<f2>|  |<f3>|  | <f4> "];
+node1[label = "<f0>| roma - 
+xela - 
+ |<f1>| roma - 
+hola - 
+guate - 
+xela - 
+ |<f2>|  |<f3>|  | <f4> "];
+"node0": f0 -> "node1"
+node3[label = "<f0>| roma - 
+hola - 
+xela - 
+ |<f1>| roma - 
+hola - 
+guate - 
+xela - 
+ |<f2>| roma - 
+hola - 
+guate - 
+paris - 
+xela - 
+ |<f3>|  | <f4> "];
+"node0": f1 -> "node3"
+}

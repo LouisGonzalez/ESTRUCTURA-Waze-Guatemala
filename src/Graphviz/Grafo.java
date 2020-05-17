@@ -6,6 +6,7 @@
 package Graphviz;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pollitos.DatosCamino;
@@ -45,6 +46,32 @@ public class Grafo {
                 Logger.getLogger(Grafo.class.getName()).log(Level.SEVERE, null, ex);
             }
             
+        }
+    }
+    
+    public void crearArbolB(ArrayList<String> textos){
+        String inicio = "";
+        inicio += "digraph G {\n";
+        inicio += "node [shape = record,height=.1]";
+        for (int i = 0; i < textos.size(); i++) {
+            inicio += textos.get(i);
+        }
+        inicio += "}";
+        File grafica = new File("arbolB.dot");
+        if(grafica.exists()){
+            grafica.delete();
+            crearArbolB(textos);
+        } else {
+            FileWriter ficher = null;
+            PrintWriter print = null;
+            try {
+                ficher = new FileWriter(grafica);
+                print = new PrintWriter(ficher);
+                print.print(inicio);
+                ficher.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Grafo.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     

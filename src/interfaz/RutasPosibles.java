@@ -9,9 +9,13 @@ import ArbolB.Nodo;
 import ArbolB.NodoArbol;
 import ArbolB.Raiz;
 import Graphviz.CreacionSubGrafo;
+import Graphviz.Grafo;
 import OperacionesDistancia.CalculoRutas;
 import OperacionesDistancia.MejoresRutas;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import pollitos.DatosCamino;
@@ -29,7 +33,8 @@ public class RutasPosibles extends javax.swing.JDialog {
     private String tipoMovimiento;
     private final CalculoRutas rutas = new CalculoRutas();
     private ArrayList<DatosCamino> listDatos;
-
+    private final Grafo grafoArbol = new Grafo();
+    
     /**
      * Creates new form RutasPosibles
      */
@@ -166,6 +171,11 @@ public class RutasPosibles extends javax.swing.JDialog {
 
         btnRutas.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         btnRutas.setText("Ver rutas en arbol");
+        btnRutas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRutasActionPerformed(evt);
+            }
+        });
 
         btnRuta.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         btnRuta.setText("Ver ruta trazada");
@@ -284,7 +294,6 @@ public class RutasPosibles extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnRuta)
                                 .addGap(13, 13, 13)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtGasDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))))
@@ -362,6 +371,23 @@ public class RutasPosibles extends javax.swing.JDialog {
         RutaEspecifica ruta = new RutaEspecifica(null, false, "/home/luisitopapurey/Escritorio/Estructura de datos/ProyectoFinal/imagen2.jpg");
         ruta.setVisible(true);
     }//GEN-LAST:event_btnRutaActionPerformed
+
+    private void btnRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRutasActionPerformed
+        ArrayList<String> textos = new ArrayList<>();
+        arbolB.crearGraphviz(arbolB.raiz, textos);
+        for (int i = 0; i < textos.size(); i++) {
+            System.out.println(textos.get(i));
+        }
+        grafoArbol.crearArbolB(textos);
+        ProcessBuilder builder = new ProcessBuilder("dot", "-Tjpg", "-o", "arbolB.jpg", "arbolB.dot");
+        builder.redirectErrorStream(true);
+        
+        try {
+            builder.start();
+        } catch (IOException ex) {
+            Logger.getLogger(RutasPosibles.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnRutasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

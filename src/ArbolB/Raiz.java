@@ -243,7 +243,6 @@ public class Raiz {
                 if (raiz.getMisRutas()[i].getHijoIzquierdo() != null) {
                     System.out.println("\n");
                     mostrarNodos(raiz.getMisRutas()[i].getHijoIzquierdo());
-
                 }
                 if (i == raiz.getMisRutas().length - 2 && raiz.getMisRutas()[i] != null) {
                     if (raiz.getMisRutas()[i].getHijoDerecho() != null) {
@@ -257,7 +256,67 @@ public class Raiz {
                         mostrarNodos(raiz.getMisRutas()[i].getHijoDerecho());
                     }
                 }
+            }
+        }
+    }
+    
+    private String escribirTrayectoriasArbol(ArrayList<String> trayectorias){
+        String texto = "";
+        for (int i = 0; i < trayectorias.size(); i++) {
+            texto += trayectorias.get(i) + " - \n";
+        }
+        return texto;
+    }
 
+    public void crearGraphviz(NodoArbol nodoArbol, ArrayList<String> nodos) {
+        String texto = "node" + nodos.size() + "[label = \"";
+        int padre = nodos.size();
+        for (int i = 0; i < nodoArbol.getMisRutas().length - 1; i++) {
+            if (i < nodoArbol.getMisRutas().length - 2) {
+                if (nodoArbol.getMisRutas()[i] != null) {
+                    texto += "<f" + i + ">" + "| " + escribirTrayectoriasArbol(nodoArbol.getMisRutas()[i].getJerarquiaDestinos()) + " |";
+                } else {
+                    texto += "<f" + i + ">" + "|  |";
+
+                }
+            } else {
+                if (nodoArbol.getMisRutas()[i] != null) {
+                    int contFinal = i + 1;
+                    texto += "<f" + i + ">" + "| " + escribirTrayectoriasArbol(nodoArbol.getMisRutas()[i].getJerarquiaDestinos()) + " | <f" + contFinal + "\"];\n";
+
+                } else {
+                    int contFinal = i + 1;
+                    texto += "<f" + i + ">" + "|  | <f" + contFinal + "> \"];\n";
+                }
+            }
+        }
+        nodos.add(texto);
+        for (int i = 0; i < nodoArbol.getMisRutas().length - 1; i++) {
+            if (nodoArbol.getMisRutas()[i] != null) {
+                if (nodoArbol.getMisRutas()[i].getHijoIzquierdo() != null) {
+                    crearGraphviz(nodoArbol.getMisRutas()[i].getHijoIzquierdo(), nodos);
+                    int noNodos = nodos.size() - 1;
+                    String aux = "\"node" + padre + "\": f" + i + " -> \"node" + noNodos + "\"\n";
+                    nodos.add(aux);
+                }
+                if (i == nodoArbol.getMisRutas().length - 2 && nodoArbol.getMisRutas()[i] != null) {
+                    if (nodoArbol.getMisRutas()[i].getHijoDerecho() != null) {
+                        crearGraphviz(nodoArbol.getMisRutas()[i].getHijoDerecho(), nodos);
+                        int noCompuerta = i + 1;
+                        int noNodos = nodos.size() - 1;
+                        String aux = "\"node" + padre + "\": f" + noCompuerta + " -> \"node" + noNodos + "\"\n";
+                        nodos.add(aux);
+                    }
+                }
+                if (nodoArbol.getMisRutas()[i + 1] == null && i < raiz.getMisRutas().length - 2) {
+                    if (nodoArbol.getMisRutas()[i].getHijoDerecho() != null) {
+                        crearGraphviz(nodoArbol.getMisRutas()[i].getHijoDerecho(), nodos);
+                        int noCompuerta = i + 1;
+                        int noNodos = nodos.size() - 1;
+                        String aux = "\"node" + padre + "\": f" + noCompuerta + " -> \"node" + noNodos + "\"\n";
+                        nodos.add(aux);
+                    }
+                }
             }
         }
 

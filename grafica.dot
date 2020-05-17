@@ -1,4 +1,4 @@
 digraph G {
 rankdir=LR;
-paris->xela[label="a"];
+guate->xela[label="a"];
 }
