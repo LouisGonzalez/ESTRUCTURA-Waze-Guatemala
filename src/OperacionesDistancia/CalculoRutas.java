@@ -108,7 +108,7 @@ public class CalculoRutas {
                                 escribirDatosNodo(distancias);
                                 agregarNodoArbol(arbolB);
                                 removerUltimoDato();
-                                
+
                             } else {
                                 jerarquiaDestinos.add(listCaminos.get(i).getOrigen());
                                 agregarDatos(listCaminos, i);
@@ -127,29 +127,29 @@ public class CalculoRutas {
         borrarDatoEntero(distancias);
         reiniciarVisitados2(listCaminos, origen);
     }
-    
-    public void agregarNodoArbol(Raiz arbolB){
-       Nodo nuevo = new Nodo();
-       nuevo.setDesgastePersona(traspasarArregloEntero(desgastePersona));
-       nuevo.setDistancias(traspasarArregloEntero(distancias));
-       nuevo.setGastosGas(traspasarArregloEntero(gastosGas));
-       nuevo.setJerarquiaDestinos(traspasarArregloString(jerarquiaDestinos));
-       nuevo.setTiemposAPie(traspasarArregloEntero(tiemposAPie));
-       nuevo.setTiemposVehiculo(traspasarArregloEntero(tiemposVehiculo));
-       nuevo.setId(VentanaPrincipal.idNodos);
-       arbolB.insertar2(arbolB.raiz, nuevo, true);
-       VentanaPrincipal.idNodos++;
+
+    public void agregarNodoArbol(Raiz arbolB) {
+        Nodo nuevo = new Nodo();
+        nuevo.setDesgastePersona(traspasarArregloEntero(desgastePersona));
+        nuevo.setDistancias(traspasarArregloEntero(distancias));
+        nuevo.setGastosGas(traspasarArregloEntero(gastosGas));
+        nuevo.setJerarquiaDestinos(traspasarArregloString(jerarquiaDestinos));
+        nuevo.setTiemposAPie(traspasarArregloEntero(tiemposAPie));
+        nuevo.setTiemposVehiculo(traspasarArregloEntero(tiemposVehiculo));
+        nuevo.setId(VentanaPrincipal.idNodos);
+        arbolB.insertar2(arbolB.raiz, nuevo, true);
+        VentanaPrincipal.idNodos++;
     }
-    
-    public ArrayList<Integer> traspasarArregloEntero(ArrayList<Integer> arreglo){
+
+    public ArrayList<Integer> traspasarArregloEntero(ArrayList<Integer> arreglo) {
         ArrayList<Integer> auxiliar = new ArrayList<>();
         for (int i = 0; i < arreglo.size(); i++) {
             auxiliar.add(arreglo.get(i));
         }
         return auxiliar;
     }
-    
-    public ArrayList<String> traspasarArregloString(ArrayList<String> arreglo){
+
+    public ArrayList<String> traspasarArregloString(ArrayList<String> arreglo) {
         ArrayList<String> auxiliar = new ArrayList<>();
         for (int i = 0; i < arreglo.size(); i++) {
             auxiliar.add(arreglo.get(i));
@@ -198,14 +198,18 @@ public class CalculoRutas {
         if (!listCaminos.isEmpty()) {
             listCaminos.remove(contador);
         }*/
-        if (!listCaminos.isEmpty()) {
-            listCaminos.remove(listCaminos.size() - 1);
+        if (listCaminos != null) {
+            if (!listCaminos.isEmpty()) {
+                listCaminos.remove(listCaminos.size() - 1);
+            }
         }
     }
 
     public void borrarDatoEntero(ArrayList<Integer> lista) {
-        if (!lista.isEmpty()) {
-            lista.remove(lista.size() - 1);
+        if (lista != null) {
+            if (!lista.isEmpty()) {
+                lista.remove(lista.size() - 1);
+            }
         }
     }
 

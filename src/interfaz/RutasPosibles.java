@@ -34,7 +34,7 @@ public class RutasPosibles extends javax.swing.JDialog {
     private final CalculoRutas rutas = new CalculoRutas();
     private ArrayList<DatosCamino> listDatos;
     private final Grafo grafoArbol = new Grafo();
-    
+
     /**
      * Creates new form RutasPosibles
      */
@@ -52,15 +52,33 @@ public class RutasPosibles extends javax.swing.JDialog {
         mejores.mostrarEstadisticas(arbolB);
         mejores.mejorRutaAPie();
         mejores.mejorRutaVehiculo();
-        txtActual.setText(arbolB.raiz.getMisRutas()[0].getJerarquiaDestinos().get(0));
-        txtFinal.setText(arbolB.raiz.getMisRutas()[0].getJerarquiaDestinos().get(arbolB.raiz.getMisRutas()[0].getJerarquiaDestinos().size() - 1));
-        txtRGas.setText(Integer.toString(mejores.mejorRutaGasolina()));
-        txtRDistancia.setText(Integer.toString(mejores.mejorRutaDistancia()));
-        txtFisicoDistancia.setText(Integer.toString(mejores.mejorRutaDesgasteDistancia()));
-        txtRDesgaste.setText(Integer.toString(mejores.mejorRutaDesgaste()));
-        txtGasDistancia.setText(Integer.toString(mejores.mejorRutaGasDistancia()));
-        txtRVehiculo.setText(Integer.toString(mejores.mejorRutaVehiculo()));
-        txtRPie.setText(Integer.toString(mejores.mejorRutaAPie()));
+        if (arbolB.raiz.getMisRutas()[0] != null) {
+            if (arbolB.raiz.getMisRutas()[0].getJerarquiaDestinos() != null) {
+                txtActual.setText(arbolB.raiz.getMisRutas()[0].getJerarquiaDestinos().get(0));
+                txtFinal.setText(arbolB.raiz.getMisRutas()[0].getJerarquiaDestinos().get(arbolB.raiz.getMisRutas()[0].getJerarquiaDestinos().size() - 1));
+            }
+        }
+        if (mejores.mejorRutaGasolina() != null) {
+            txtRGas.setText(Integer.toString(mejores.mejorRutaGasolina()));
+        }
+        if (mejores.mejorRutaDistancia() != null) {
+            txtRDistancia.setText(Integer.toString(mejores.mejorRutaDistancia()));
+        }
+        if (mejores.mejorRutaDesgasteDistancia() != null) {
+            txtFisicoDistancia.setText(Integer.toString(mejores.mejorRutaDesgasteDistancia()));
+        }
+        if (mejores.mejorRutaDesgaste() != null) {
+            txtRDesgaste.setText(Integer.toString(mejores.mejorRutaDesgaste()));
+        }
+        if (mejores.mejorRutaGasDistancia() != null) {
+            txtGasDistancia.setText(Integer.toString(mejores.mejorRutaGasDistancia()));
+        }
+        if (mejores.mejorRutaVehiculo() != null) {
+            txtRVehiculo.setText(Integer.toString(mejores.mejorRutaVehiculo()));
+        }
+        if (mejores.mejorRutaAPie() != null) {
+            txtRPie.setText(Integer.toString(mejores.mejorRutaAPie()));
+        }
 
     }
 
@@ -374,14 +392,11 @@ public class RutasPosibles extends javax.swing.JDialog {
 
     private void btnRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRutasActionPerformed
         ArrayList<String> textos = new ArrayList<>();
-        arbolB.crearGraphviz(arbolB.raiz, textos);
-        for (int i = 0; i < textos.size(); i++) {
-            System.out.println(textos.get(i));
-        }
+        arbolB.crearGraphviz(arbolB.raiz, textos, true, null, null, null);
         grafoArbol.crearArbolB(textos);
         ProcessBuilder builder = new ProcessBuilder("dot", "-Tjpg", "-o", "arbolB.jpg", "arbolB.dot");
         builder.redirectErrorStream(true);
-        
+
         try {
             builder.start();
         } catch (IOException ex) {

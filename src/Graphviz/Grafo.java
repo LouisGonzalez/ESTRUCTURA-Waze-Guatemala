@@ -20,7 +20,7 @@ public class Grafo {
     
     public String nuevaLinea(DatosCamino datos){
         String dibujado;
-        dibujado = datos.getOrigen() + "->" + datos.getDestino() + "[label=\"a\"];\n";
+        dibujado = datos.getOrigen() + "->" + datos.getDestino() + "[label=\""+datos.getDistancia()+"\"];\n";
         return dibujado;
     }
     
@@ -52,7 +52,7 @@ public class Grafo {
     public void crearArbolB(ArrayList<String> textos){
         String inicio = "";
         inicio += "digraph G {\n";
-        inicio += "node [shape = record,height=.1]";
+        inicio += "node [shape = record,height=.1]\n";
         for (int i = 0; i < textos.size(); i++) {
             inicio += textos.get(i);
         }

@@ -1,30 +1,226 @@
 digraph G {
-node [shape = record,height=.1]node0[label = "<f0>| roma - 
-hola - 
-guate - 
-paris - 
-xela - 
- |<f1>|  |<f2>|  |<f3>|  | <f4> "];
-node1[label = "<f0>| roma - 
-xela - 
- |<f1>| roma - 
-hola - 
-guate - 
-xela - 
- |<f2>|  |<f3>|  | <f4> "];
+node [shape = record,height=.1]
+node0[label = "<f0>| tokio - italia - rio - roma - xela - hola - guate - francia -  |<f1>|  |<f2>|  |<f3>|  | <f4> "];
+node1[label = "<f0>| tokio - xela - roma - indonesia - peru - hola - guate - francia -  |<f1>| tokio - xela - paris - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
 "node0": f0 -> "node1"
-node3[label = "<f0>| roma - 
-hola - 
-xela - 
- |<f1>| roma - 
-hola - 
-guate - 
-xela - 
- |<f2>| roma - 
-hola - 
-guate - 
-paris - 
-xela - 
- |<f3>|  | <f4> "];
-"node0": f1 -> "node3"
+node2[label = "<f0>| tokio - xela - guate - francia -  |<f1>| tokio - xela - roma - hola - madrid - barcelona - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node1": f0 -> "node2"
+node3[label = "<f0>| tokio - xela - guate - hola - peru - indonesia - roma - rio - italia - francia -  |<f1>| tokio - xela - guate - hola - mexico - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node2": f0 -> "node3"
+node4[label = "<f0>| tokio - xela - guate - hola - roma - rio - italia - francia -  |<f1>| tokio - xela - guate - hola - mexico - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node3": f0 -> "node4"
+node5[label = "<f0>| tokio - xela - guate - hola - madrid - francia -  |<f1>| tokio - xela - guate - hola - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node3": f1 -> "node5"
+node6[label = "<f0>| tokio - xela - guate - hola - peru - indonesia - roma - rio - italia - francia -  |<f1>| tokio - xela - guate - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node3": f2 -> "node6"
+node7[label = "<f0>| tokio - xela - guate - barcelona - madrid - hola - peru - indonesia - roma - rio - italia - francia -  |<f1>| tokio - xela - roma - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node2": f1 -> "node7"
+node8[label = "<f0>| tokio - xela - guate - barcelona - madrid - hola - roma - rio - italia - francia -  |<f1>| tokio - xela - guate - barcelona - madrid - hola - mexico - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node7": f0 -> "node8"
+node9[label = "<f0>| tokio - xela - guate - barcelona - madrid - francia -  |<f1>| tokio - xela - roma - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node7": f1 -> "node9"
+node10[label = "<f0>| tokio - xela - roma - hola - guate - francia -  |<f1>| tokio - xela - roma - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node7": f2 -> "node10"
+node11[label = "<f0>| tokio - xela - roma - mexico - hola - guate - francia -  |<f1>| tokio - xela - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node2": f2 -> "node11"
+node12[label = "<f0>| tokio - xela - roma - hola - madrid - francia -  |<f1>| tokio - xela - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node11": f0 -> "node12"
+node13[label = "<f0>| tokio - xela - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - xela - roma - mexico - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node11": f1 -> "node13"
+node14[label = "<f0>| tokio - xela - roma - mexico - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - xela - roma - mexico - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node11": f2 -> "node14"
+node15[label = "<f0>| tokio - xela - hola - guate - francia -  |<f1>| tokio - xela - paris - guate - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node1": f1 -> "node15"
+node16[label = "<f0>| tokio - xela - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - xela - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node15": f0 -> "node16"
+node17[label = "<f0>| tokio - xela - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - xela - roma - indonesia - peru - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node16": f0 -> "node17"
+node18[label = "<f0>| tokio - xela - roma - indonesia - peru - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - xela - roma - indonesia - peru - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node16": f1 -> "node18"
+node19[label = "<f0>| tokio - xela - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - xela - hola - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node16": f2 -> "node19"
+node20[label = "<f0>| tokio - xela - hola - peru - indonesia - roma - rio - italia - francia -  |<f1>| tokio - xela - paris - guate - hola - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node15": f1 -> "node20"
+node21[label = "<f0>| tokio - xela - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - xela - hola - mexico - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node20": f0 -> "node21"
+node22[label = "<f0>| tokio - xela - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - xela - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node20": f1 -> "node22"
+node23[label = "<f0>| tokio - xela - paris - guate - hola - mexico - roma - rio - italia - francia -  |<f1>| tokio - xela - paris - guate - hola - peru - indonesia - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node20": f2 -> "node23"
+node24[label = "<f0>| tokio - xela - paris - guate - hola - peru - indonesia - roma - rio - italia - francia -  |<f1>| tokio - xela - paris - guate - barcelona - madrid - hola - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node15": f2 -> "node24"
+node25[label = "<f0>| tokio - xela - paris - guate - hola - roma - rio - italia - francia -  |<f1>| tokio - xela - paris - guate - hola - mexico - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node24": f0 -> "node25"
+node26[label = "<f0>| tokio - xela - paris - guate - hola - madrid - francia -  |<f1>| tokio - xela - paris - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node24": f1 -> "node26"
+node27[label = "<f0>| tokio - xela - paris - guate - barcelona - madrid - hola - mexico - roma - rio - italia - francia -  |<f1>| tokio - xela - paris - guate - barcelona - madrid - hola - peru - indonesia - roma - rio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node24": f2 -> "node27"
+node28[label = "<f0>| tokio - xela - rusia - china - rio - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - xela - rusia - china - rio - roma - indonesia - peru - hola - madrid - barcelona - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node1": f2 -> "node28"
+node29[label = "<f0>| tokio - xela - rusia - china - rio - roma - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - xela - rusia - china - rio - roma - hola - madrid - barcelona - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node28": f0 -> "node29"
+node30[label = "<f0>| tokio - xela - rusia - china - rio - italia - francia -  |<f1>| tokio - xela - rusia - china - rio - roma - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node29": f0 -> "node30"
+node31[label = "<f0>| tokio - xela - rusia - china - rio - roma - hola - guate - francia -  |<f1>| tokio - xela - rusia - china - rio - roma - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node29": f1 -> "node31"
+node32[label = "<f0>| tokio - xela - rusia - china - rio - roma - hola - madrid - francia -  |<f1>| tokio - xela - rusia - china - rio - roma - mexico - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node29": f2 -> "node32"
+node33[label = "<f0>| tokio - xela - rusia - china - rio - roma - mexico - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - xela - rusia - china - rio - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node28": f1 -> "node33"
+node34[label = "<f0>| tokio - xela - rusia - china - rio - roma - mexico - hola - guate - francia -  |<f1>| tokio - xela - rusia - china - rio - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node33": f0 -> "node34"
+node35[label = "<f0>| tokio - xela - rusia - china - rio - roma - mexico - hola - madrid - francia -  |<f1>| tokio - xela - rusia - china - rio - roma - indonesia - peru - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node33": f1 -> "node35"
+node36[label = "<f0>| tokio - xela - rusia - china - rio - roma - indonesia - peru - hola - guate - francia -  |<f1>| tokio - xela - rusia - china - rio - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node33": f2 -> "node36"
+node37[label = "<f0>| tokio - italia - rio - roma - xela - guate - hola - madrid - francia -  |<f1>| tokio - italia - rio - roma - xela - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node28": f2 -> "node37"
+node38[label = "<f0>| tokio - xela - rusia - china - rio - roma - indonesia - peru - hola - madrid - francia -  |<f1>| tokio - italia - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node37": f0 -> "node38"
+node39[label = "<f0>| tokio - italia - rio - roma - xela - guate - hola - madrid - francia -  |<f1>| tokio - italia - rio - roma - xela - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node37": f1 -> "node39"
+node40[label = "<f0>| tokio - italia - rio - roma - xela - hola - guate - francia -  |<f1>| tokio - italia - rio - roma - xela - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node37": f2 -> "node40"
+node41[label = "<f0>| tokio - italia - rio - roma - mexico - hola - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - guate - francia -  |<f2>| tokio - italia - rio - roma - xela - paris - guate - hola - madrid - francia -  |<f3>| tokio - italia - rio - roma - indonesia - peru - hola - xela - guate - barcelona - madrid - francia -  | <f4> "];
+"node0": f1 -> "node41"
+node42[label = "<f0>| tokio - italia - rio - roma - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node41": f0 -> "node42"
+node43[label = "<f0>| tokio - italia - rio - roma - xela - hola - madrid - francia -  |<f1>| tokio - italia - rio - roma - xela - paris - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node42": f0 -> "node43"
+node44[label = "<f0>| tokio - italia - rio - roma - xela - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - xela - hola - madrid - barcelona - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node43": f0 -> "node44"
+node45[label = "<f0>| tokio - italia - rio - roma - xela - paris - guate - hola - madrid - francia -  |<f1>| tokio - italia - rio - roma - xela - paris - guate - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node43": f1 -> "node45"
+node46[label = "<f0>| tokio - italia - rio - roma - xela - paris - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node43": f2 -> "node46"
+node47[label = "<f0>| tokio - italia - rio - roma - hola - xela - paris - guate - francia -  |<f1>| tokio - italia - rio - roma - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node42": f1 -> "node47"
+node48[label = "<f0>| tokio - italia - rio - roma - hola - xela - guate - francia -  |<f1>| tokio - italia - rio - roma - hola - xela - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node47": f0 -> "node48"
+node49[label = "<f0>| tokio - italia - rio - roma - hola - xela - paris - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node47": f1 -> "node49"
+node50[label = "<f0>| tokio - italia - rio - roma - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - italia - rio - roma - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node47": f2 -> "node50"
+node51[label = "<f0>| tokio - italia - rio - roma - mexico - hola - xela - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node42": f2 -> "node51"
+node52[label = "<f0>| tokio - italia - rio - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - xela - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node51": f0 -> "node52"
+node53[label = "<f0>| tokio - italia - rio - roma - mexico - hola - xela - paris - guate - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - xela - paris - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node51": f1 -> "node53"
+node54[label = "<f0>| tokio - italia - rio - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - madrid - barcelona - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node51": f2 -> "node54"
+node55[label = "<f0>| tokio - italia - rio - roma - indonesia - peru - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node41": f1 -> "node55"
+node56[label = "<f0>| tokio - italia - rio - roma - indonesia - peru - hola - xela - guate - francia -  |<f1>| tokio - italia - rio - roma - indonesia - peru - hola - xela - paris - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node55": f0 -> "node56"
+node57[label = "<f0>| tokio - italia - rio - roma - indonesia - peru - hola - guate - francia -  |<f1>| tokio - italia - rio - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node56": f0 -> "node57"
+node58[label = "<f0>| tokio - italia - rio - roma - indonesia - peru - hola - xela - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - indonesia - peru - hola - xela - paris - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node56": f1 -> "node58"
+node59[label = "<f0>| tokio - italia - rio - roma - indonesia - peru - hola - guate - francia -  |<f1>| tokio - italia - rio - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node56": f2 -> "node59"
+node60[label = "<f0>| tokio - italia - rio - china - rusia - xela - guate - hola - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node55": f1 -> "node60"
+node61[label = "<f0>| tokio - italia - rio - roma - indonesia - peru - hola - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - guate - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node60": f0 -> "node61"
+node62[label = "<f0>| tokio - italia - rio - china - rusia - xela - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node60": f1 -> "node62"
+node63[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node60": f2 -> "node63"
+node64[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node55": f2 -> "node64"
+node65[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node64": f0 -> "node65"
+node66[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node64": f1 -> "node66"
+node67[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node64": f2 -> "node67"
+node68[label = "<f0>| tokio - italia - rio - china - rusia - xela - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - xela - guate - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node41": f2 -> "node68"
+node69[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node68": f0 -> "node69"
+node70[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node69": f0 -> "node70"
+node71[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node69": f1 -> "node71"
+node72[label = "<f0>| tokio - italia - rio - china - rusia - xela - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node69": f2 -> "node72"
+node73[label = "<f0>| tokio - italia - rio - china - rusia - xela - paris - guate - hola - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - paris - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node68": f1 -> "node73"
+node74[label = "<f0>| tokio - italia - rio - china - rusia - xela - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node73": f0 -> "node74"
+node75[label = "<f0>| tokio - italia - rio - china - rusia - xela - paris - guate - hola - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - paris - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node73": f1 -> "node75"
+node76[label = "<f0>| tokio - italia - francia -  |<f1>| tokio - italia - rio - roma - xela - guate - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node73": f2 -> "node76"
+node77[label = "<f0>| tokio - italia - rio - roma - xela - hola - guate - francia -  |<f1>| tokio - italia - rio - roma - xela - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node68": f2 -> "node77"
+node78[label = "<f0>| tokio - italia - rio - roma - xela - guate - francia -  |<f1>| tokio - italia - rio - roma - xela - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node77": f0 -> "node78"
+node79[label = "<f0>| tokio - italia - rio - roma - xela - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - xela - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node77": f1 -> "node79"
+node80[label = "<f0>| tokio - italia - rio - roma - xela - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - italia - rio - roma - xela - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node77": f2 -> "node80"
+node81[label = "<f0>| tokio - italia - rio - roma - hola - xela - paris - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - xela - paris - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node41": f3 -> "node81"
+node82[label = "<f0>| tokio - italia - rio - roma - xela - paris - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - hola - xela - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node81": f0 -> "node82"
+node83[label = "<f0>| tokio - italia - rio - roma - xela - paris - guate - hola - madrid - francia -  |<f1>| tokio - italia - rio - roma - xela - paris - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node82": f0 -> "node83"
+node84[label = "<f0>| tokio - italia - rio - roma - hola - guate - francia -  |<f1>| tokio - italia - rio - roma - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node82": f1 -> "node84"
+node85[label = "<f0>| tokio - italia - rio - roma - hola - xela - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - hola - xela - paris - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node82": f2 -> "node85"
+node86[label = "<f0>| tokio - italia - rio - roma - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node81": f1 -> "node86"
+node87[label = "<f0>| tokio - italia - rio - roma - hola - guate - francia -  |<f1>| tokio - italia - rio - roma - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node86": f0 -> "node87"
+node88[label = "<f0>| tokio - italia - rio - roma - hola - madrid - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node86": f1 -> "node88"
+node89[label = "<f0>| tokio - italia - rio - roma - mexico - hola - xela - guate - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - xela - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node86": f2 -> "node89"
+node90[label = "<f0>| tokio - italia - rio - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - indonesia - peru - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node81": f2 -> "node90"
+node91[label = "<f0>| tokio - italia - rio - roma - mexico - hola - xela - paris - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node90": f0 -> "node91"
+node92[label = "<f0>| tokio - italia - rio - roma - mexico - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - italia - rio - roma - mexico - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node90": f1 -> "node92"
+node93[label = "<f0>| tokio - italia - rio - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - indonesia - peru - hola - xela - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node90": f2 -> "node93"
+node94[label = "<f0>| tokio - italia - rio - china - rusia - xela - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f2>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - madrid - barcelona - guate - francia -  |<f3>|  | <f4> "];
+"node41": f4 -> "node94"
+node95[label = "<f0>| tokio - italia - rio - roma - indonesia - peru - hola - guate - francia -  |<f1>| tokio - italia - rio - roma - indonesia - peru - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node94": f0 -> "node95"
+node96[label = "<f0>| tokio - italia - rio - roma - indonesia - peru - hola - xela - paris - guate - francia -  |<f1>| tokio - italia - rio - roma - indonesia - peru - hola - xela - paris - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node95": f0 -> "node96"
+node97[label = "<f0>| tokio - italia - rio - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - roma - indonesia - peru - hola - madrid - barcelona - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node95": f1 -> "node97"
+node98[label = "<f0>| tokio - italia - rio - china - rusia - xela - guate - hola - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - guate - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node95": f2 -> "node98"
+node99[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - hola - madrid - barcelona - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node94": f1 -> "node99"
+node100[label = "<f0>| tokio - italia - rio - china - rusia - xela - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node99": f0 -> "node100"
+node101[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - hola - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node99": f1 -> "node101"
+node102[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - hola - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node99": f2 -> "node102"
+node103[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - madrid - barcelona - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node94": f2 -> "node103"
+node104[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node103": f0 -> "node104"
+node105[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - mexico - hola - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node103": f1 -> "node105"
+node106[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node103": f2 -> "node106"
+node107[label = "<f0>| tokio - italia - rio - china - rusia - xela - hola - guate - barcelona - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - hola - madrid - barcelona - guate - francia -  |<f2>| tokio - italia - rio - china - rusia - xela - paris - guate - hola - madrid - francia -  |<f3>|  | <f4> "];
+"node94": f3 -> "node107"
+node108[label = "<f0>| tokio - italia - rio - china - rusia - xela - roma - indonesia - peru - hola - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - hola - guate - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node107": f0 -> "node108"
+node109[label = "<f0>| tokio - italia - rio - china - rusia - xela - hola - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - hola - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node107": f1 -> "node109"
+node110[label = "<f0>| tokio - italia - rio - china - rusia - xela - hola - madrid - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - paris - guate - hola - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node107": f2 -> "node110"
+node111[label = "<f0>| tokio - italia - rio - china - rusia - xela - paris - guate - francia -  |<f1>| tokio - italia - rio - china - rusia - xela - paris - guate - barcelona - madrid - francia -  |<f2>|  |<f3>|  | <f4> "];
+"node107": f3 -> "node111"
 }
