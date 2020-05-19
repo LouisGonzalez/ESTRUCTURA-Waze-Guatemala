@@ -1,2 +1,4 @@
-tokio|italia|5|89|11|20|5
-italia|francia|15|5|33|4|10
+paris|guate|22|19|12|45|5
+guate|hola|15|20|16|63|40
+hola|roma|3|9|2|73|22
+roma|xela|19|1|34|88|15

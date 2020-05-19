@@ -327,7 +327,6 @@ public class Raiz {
                 }
             }
         }
-
     }
 
     public Nodo buscarNodos(NodoArbol raiz, int id, Nodo nodoBuscado, boolean encontrado) {
